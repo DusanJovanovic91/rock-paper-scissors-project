@@ -24,10 +24,10 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-
+function playGame() {
 //write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement. 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
+
 
     
         if (humanChoice === "rock" && computerChoice === "paper")  {
@@ -68,6 +68,24 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 
-       const humanSelection = getHumanChoice();
-       const computerSelection = getComputerChoice();
-       playRound(humanSelection, computerSelection);
+       const humanChoice = getHumanChoice().toLowerCase();
+       const computerChoice = getComputerChoice();
+       playRound(humanChoice, computerChoice);
+
+
+       for (let i = 0; i < 5; i++) {
+        playRound();
+        console.log("Your Score: " + humanScore);
+        console.log("Computer's Score: " + computerScore);
+       }
+
+     if (humanScore > computerScore) {
+        console.log("Wow, you won the game!");
+    } else if (humanScore < computerScore){
+        console.log("Damn, you lost");
+    } else {
+        console.log("Looks like it's a tie")
+    }
+}
+
+playGame()
