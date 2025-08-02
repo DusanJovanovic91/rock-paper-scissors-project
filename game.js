@@ -13,5 +13,9 @@ function getComputerChoice() {
       else {
           return "scissors"
       }
-    
+}
+//function that will return one of the valid choices depending on what the user inputs. 
+function getHumanChoice() {
+    let choice = prompt("Choose: rock, paper, or scissors")
+     return choice;
 }
